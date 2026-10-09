@@ -1,0 +1,7 @@
+q=3329; butterfly zeta=2580; sample interval=10 ns
+Arithmetic: provided=6 corner=20 random=100
+Butterfly: provided=5 corner=20 random=100
+mod_add: cases=126 errors=0
+mod_sub: cases=126 errors=0
+mod_mul: cases=126 errors=0
+bfly_ct: cases=125 errors=0
