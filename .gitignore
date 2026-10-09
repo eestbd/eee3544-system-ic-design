@@ -1,0 +1,13 @@
+# Temporary files and compiled ModelSim libraries
+tmp/
+work/
+
+# ModelSim simulation output and local settings
+transcript
+*.wlf
+*.vstf
+modelsim.ini
+
+# Python caches
+__pycache__/
+*.pyc
