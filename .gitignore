@@ -1,3 +1,9 @@
+# Track only course files from the parent working tree.
+/*
+!/.gitignore
+!/README.md
+!/HW[0-9]*/
+
 # Temporary files and compiled ModelSim libraries
 tmp/
 work/
