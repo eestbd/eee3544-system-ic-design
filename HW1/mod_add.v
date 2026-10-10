@@ -7,10 +7,10 @@ module mod_add (
     localparam [12:0] Q = 13'd3329;
 
     // Preserve the carry: the largest valid sum is 6656.
-    wire [12:0] sum;
-    wire [12:0] reduced_sum;
+    wire [12:0] add_ab;
+    wire [12:0] add_q;
 
-    assign sum = {1'b0, a} + {1'b0, b};
-    assign reduced_sum = sum - Q;
-    assign c = (sum >= Q) ? reduced_sum[11:0] : sum[11:0];
+    assign add_ab = {1'b0, a} + {1'b0, b};
+    assign add_q = add_ab - Q;
+    assign c = (add_ab >= Q) ? add_q[11:0] : add_ab[11:0];
 endmodule

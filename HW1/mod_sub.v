@@ -7,12 +7,11 @@ module mod_sub (
     localparam [12:0] Q = 13'd3329;
 
     // Bit 12 indicates a borrow because both operands are 12-bit.
-    wire [12:0] difference;
-    wire [12:0] corrected_difference;
+    wire [12:0] sub_ab;
+    wire [12:0] sub_q;
 
-    assign difference = {1'b0, a} - {1'b0, b};
+    assign sub_ab = {1'b0, a} - {1'b0, b};
     // For a negative difference, 13-bit wraparound yields a - b + Q.
-    assign corrected_difference = difference + Q;
-    assign c = difference[12] ? corrected_difference[11:0]
-                             : difference[11:0];
+    assign sub_q = sub_ab + Q;
+    assign c = sub_ab[12] ? sub_q[11:0] : sub_ab[11:0];
 endmodule
