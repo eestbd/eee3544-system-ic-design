@@ -204,10 +204,9 @@ module tb_hw1;
         unused = $value$plusargs("BFLY_CSV=%s", bfly_csv);
         unused = $value$plusargs("SUMMARY=%s", summary_file);
 
-        // Check the arithmetic units first, then change phase and check the butterfly.
-        check_arith;
-        phase = 1;
-        check_bfly;
+        check_arith;    // Check the arithmetic units
+        phase = 1;      // Change phase
+        check_bfly;     // check the butterfly
 
         // Write the number of cases and errors for each module to the summary file.
         summary_fd = $fopen(summary_file, "w");
