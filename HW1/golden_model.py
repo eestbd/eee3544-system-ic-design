@@ -9,7 +9,7 @@ ZETA = 2580
 # Keep the random inputs the same each time the script runs.
 SEED = 3544
 N_RANDOM = 100
-# Save the vector files beside this script.
+# Save the generated files in the vectors folder beside this script.
 OUT_DIR = Path(__file__).resolve().parent / "vectors"
 
 

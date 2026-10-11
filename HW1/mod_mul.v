@@ -16,7 +16,7 @@ module mod_mul (
     wire [24:0] rem;
     wire [24:0] rem_q;
 
-    // The product of two 12-bit values fits in 24 bits; multiplying by MU needs 37 bits.
+    // Keep the 24-bit product and store prod * MU in a 37-bit wire to avoid truncation.
     assign prod = a * b;
     assign prod_mu = prod * MU;
     // Taking the upper bits is the same as shifting right by 24 bits to estimate the quotient.
