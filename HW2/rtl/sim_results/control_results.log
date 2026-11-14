@@ -1,0 +1,25 @@
+BEGIN 1: initial asynchronous reset and idle state
+PASS 1
+BEGIN 2: idle output hold while external input changes
+PASS 2
+BEGIN 3: input is captured once and external changes are ignored
+PASS 3
+BEGIN 4: extra one-cycle start during busy is ignored
+PASS 4
+BEGIN 5: start on the completion edge is ignored because busy was high
+PASS 5
+BEGIN 6: done lasts one cycle and completed output is held
+PASS 6
+BEGIN 7: new request is accepted at the edge immediately after completion
+PASS 7
+BEGIN 8: idle asynchronous reset clears a previously nonzero output
+PASS 8
+BEGIN 9: reset after input capture; cancellation and recovery
+RESET aborted request for case 10 at age 0
+PASS 9
+BEGIN 10: reset after Stage 1; cancellation and recovery
+RESET aborted request for case 11 at age 1
+PASS 10
+BEGIN 11: reset after Stage 2; cancellation and recovery
+RESET aborted request for case 12 at age 2
+PASS 11

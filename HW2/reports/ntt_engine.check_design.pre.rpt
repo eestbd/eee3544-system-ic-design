@@ -1,0 +1,85 @@
+ 
+****************************************
+check_design summary:
+Version:     Q-2019.12-SP5-5
+Date:        Sat Nov 14 16:17:11 2026
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Cells                                                              36
+    Cells do not drive (LINT-1)                                     3
+    Connected to power or ground (LINT-32)                         29
+    Nets connected to multiple pins on same cell (LINT-33)          4
+--------------------------------------------------------------------------------
+
+Warning: In design 'mod_mul', cell 'I_0' does not drive any nets. (LINT-1)
+Warning: In design 'mod_add', cell 'I_0' does not drive any nets. (LINT-1)
+Warning: In design 'mod_sub', cell 'I_0' does not drive any nets. (LINT-1)
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[11]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[10]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[9]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[8]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[7]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[6]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[5]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[4]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[3]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[2]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[1]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[0].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[0]' is connected to logic 1. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[1].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[8]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[1].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[5]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[1].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[3]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[1].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[1]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[11]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[8]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[5]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[4]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[3]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[2]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[1]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[2].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[0]' is connected to logic 1. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[3].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[8]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[3].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[5]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[3].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[2]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[3].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[1]' is connected to logic 0. 
+Warning: In design 'ntt_engine', a pin on submodule 'butterflies[3].bfly' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'zeta[0]' is connected to logic 1. 
+Warning: In design 'ntt_engine', the same net is connected to more than one pin on submodule 'butterflies[0].bfly'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'zeta[11]', 'zeta[10]'', 'zeta[9]', 'zeta[8]', 'zeta[7]', 'zeta[6]', 'zeta[5]', 'zeta[4]', 'zeta[3]', 'zeta[2]', 'zeta[1]'.
+Warning: In design 'ntt_engine', the same net is connected to more than one pin on submodule 'butterflies[1].bfly'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'zeta[8]', 'zeta[5]'', 'zeta[3]', 'zeta[1]'.
+Warning: In design 'ntt_engine', the same net is connected to more than one pin on submodule 'butterflies[2].bfly'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'zeta[11]', 'zeta[8]'', 'zeta[5]', 'zeta[4]', 'zeta[3]', 'zeta[2]', 'zeta[1]'.
+Warning: In design 'ntt_engine', the same net is connected to more than one pin on submodule 'butterflies[3].bfly'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'zeta[8]', 'zeta[5]'', 'zeta[2]', 'zeta[1]'.
+1

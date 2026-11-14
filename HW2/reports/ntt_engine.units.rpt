@@ -1,0 +1,16 @@
+************************************
+Report : units
+Design : ntt_engine
+Version: Q-2019.12-SP5-5
+Date   : Sat Nov 14 16:17:11 2026
+
+************************************
+Units
+------------------------------------
+Time_unit            : 1.0e-09 Second(ns)
+Capacitive_load_unit : 1.0e-15 Farad(fF)
+Resistance_unit      : 1.0e+6 Ohm(MOhm)
+Voltage_unit         : 1 Volt
+Power_unit           : N/A
+Current_unit         : 1.0e-06 Amp(uA)
+1

@@ -1,0 +1,41 @@
+Information: Changed wire load model for 'mod_sub' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_add' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_mul' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'bfly_ct' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_sub' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_add' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_mul' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'bfly_ct' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_sub' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_add' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_mul' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'bfly_ct' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_sub' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_add' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'mod_mul' from '(none)' to 'ForQA'. (OPT-170)
+Information: Changed wire load model for 'bfly_ct' from '(none)' to 'ForQA'. (OPT-170)
+  Allocating blocks in 'DW02_mult_A_width12_B_width12'
+  Allocating blocks in 'DW02_mult_A_width24_B_width13'
+  Allocating blocks in 'DW02_mult_A_width13_B_width12'
+Information: Updating graph... (UID-83)
+Warning: Design 'ntt_engine' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : clocks
+Design : ntt_engine
+Version: Q-2019.12-SP5-5
+Date   : Sat Nov 14 16:17:23 2026
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk              5.00   {0 2.5}                       {clk}
+--------------------------------------------------------------------------------
+1

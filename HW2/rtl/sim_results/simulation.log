@@ -1,0 +1,86 @@
+# puts [exec python -B golden_model.py]
+# 
+# if {![file isdirectory work]} {vlib work}
+# if {![file exists modelsim.ini]} {vmap -c}
+# Use a relative path: this ModelSim build misreports the absolute working path.
+# vmap work work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work work 
+# Modifying modelsim.ini
+# vlog -work work -lint mod_add.v mod_sub.v mod_mul.v bfly_ct.v ntt_engine.v tb_hw2.v
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 15:41:08 on Nov 14,2026
+# vlog -work work -lint mod_add.v mod_sub.v mod_mul.v bfly_ct.v ntt_engine.v tb_hw2.v 
+# -- Compiling module mod_add
+# -- Compiling module mod_sub
+# -- Compiling module mod_mul
+# -- Compiling module bfly_ct
+# -- Compiling module ntt_engine
+# -- Compiling module tb_hw2
+# 
+# Top level modules:
+# 	tb_hw2
+# End time: 15:41:08 on Nov 14,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+# vsim -voptargs=+acc -wlf sim_results/hw2.wlf work.tb_hw2
+# vsim -voptargs="+acc" -wlf sim_results/hw2.wlf work.tb_hw2 
+# Start time: 15:41:10 on Nov 14,2026
+# Loading work.tb_hw2
+# Loading work.ntt_engine
+# Loading work.bfly_ct
+# Loading work.mod_mul
+# Loading work.mod_add
+# Loading work.mod_sub
+# onbreak {finish_verification}
+# onfinish stop
+# log -r /*
+# if {![batch_mode]} {
+#     view wave
+#     add wave sim:/tb_hw2/clk sim:/tb_hw2/rst_n sim:/tb_hw2/start \
+#         sim:/tb_hw2/busy sim:/tb_hw2/done
+#     add wave -radix hexadecimal sim:/tb_hw2/in_data sim:/tb_hw2/out_data
+#     add wave -radix unsigned sim:/tb_hw2/phase sim:/tb_hw2/dut/state sim:/tb_hw2/dut/x
+# }
+# run -all
+# Control scenario 1: PASS
+# Functional case 1: errors=0
+# Functional case 2: errors=0
+# Functional case 3: errors=0
+# Functional case 4: errors=0
+# Functional case 5: errors=0
+# Functional case 6: errors=0
+# Functional case 7: errors=0
+# Functional case 8: errors=0
+# Functional case 9: errors=0
+# Functional case 10: errors=0
+# Functional case 11: errors=0
+# Functional case 12: errors=0
+# Functional case 13: errors=0
+# Functional case 14: errors=0
+# Functional case 15: errors=0
+# Functional case 16: errors=0
+# Functional case 17: errors=0
+# Functional case 18: errors=0
+# Functional case 19: errors=0
+# Functional case 20: errors=0
+# Control scenario 2: PASS
+# Control scenario 3: PASS
+# Control scenario 4: PASS
+# Control scenario 5: PASS
+# Control scenario 6: PASS
+# Control scenario 7: PASS
+# Control scenario 8: PASS
+# Control scenario 9: PASS
+# Control scenario 10: PASS
+# Control scenario 11: PASS
+# Functional: 20/20 passed
+# Control: 11/11 passed
+# Requests: accepted=32 completed=29 aborted=3
+# Checks=2498 Errors=0
+# PASS: HW2 functional and control verification.
+# ** Note: $finish    : tb_hw2.v(185)
+#    Time: 907700 ps  Iteration: 0  Instance: /tb_hw2
+# Break in Task finish_test at tb_hw2.v line 185
+# End time: 15:41:11 on Nov 14,2026, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0

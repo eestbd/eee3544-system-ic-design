@@ -1,0 +1,2154 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 10
+Design : ntt_engine
+Version: Q-2019.12-SP5-5
+Date   : Sat Nov 14 16:18:59 2026
+****************************************
+
+Operating Conditions: ff1p16v125c   Library: saed32rvt_ff1p16v125c
+Wire Load Model Mode: enclosed
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[1][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U8/Y (OR2X1_RVT)                0.03       3.56 r
+  butterflies[1].bfly/add/U16/CO (FADDX1_RVT)             0.04       3.59 r
+  butterflies[1].bfly/add/U3/Y (XOR3X1_RVT)               0.02       3.62 r
+  butterflies[1].bfly/add/c[11] (mod_add_3)               0.00       3.62 r
+  butterflies[1].bfly/uo[11] (bfly_ct_3)                  0.00       3.62 r
+  U767/Y (AO22X1_RVT)                                     0.04       3.65 r
+  U766/Y (AO221X1_RVT)                                    0.03       3.68 r
+  x_reg[1][11]/D (DFFARX1_RVT)                            0.00       3.68 r
+  data arrival time                                                  3.68
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[1][11]/CLK (DFFARX1_RVT)                          0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.68
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.30
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[2][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U8/Y (OR2X1_RVT)                0.03       3.56 r
+  butterflies[1].bfly/add/U16/CO (FADDX1_RVT)             0.04       3.59 r
+  butterflies[1].bfly/add/U3/Y (XOR3X1_RVT)               0.02       3.62 r
+  butterflies[1].bfly/add/c[11] (mod_add_3)               0.00       3.62 r
+  butterflies[1].bfly/uo[11] (bfly_ct_3)                  0.00       3.62 r
+  U474/Y (AO22X1_RVT)                                     0.03       3.64 r
+  U473/Y (AO221X1_RVT)                                    0.03       3.67 r
+  x_reg[2][11]/D (DFFARX1_RVT)                            0.00       3.67 r
+  data arrival time                                                  3.67
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[2][11]/CLK (DFFARX1_RVT)                          0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.67
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.31
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[1][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U8/Y (OR2X1_RVT)                0.03       3.56 r
+  butterflies[1].bfly/add/U16/S (FADDX1_RVT)              0.06       3.61 f
+  butterflies[1].bfly/add/c[10] (mod_add_3)               0.00       3.61 f
+  butterflies[1].bfly/uo[10] (bfly_ct_3)                  0.00       3.61 f
+  U337/Y (AO22X1_RVT)                                     0.02       3.64 f
+  U336/Y (AO221X1_RVT)                                    0.02       3.66 f
+  x_reg[1][10]/D (DFFARX1_RVT)                            0.00       3.66 f
+  data arrival time                                                  3.66
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[1][10]/CLK (DFFARX1_RVT)                          0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.66
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.32
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[5][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_1_DW02_mult_0_DW02_mult_1
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_1_DW01_add_0_DW01_add_9
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_1          8000                  saed32rvt_ff1p16v125c
+  mod_mul_1_DW02_mult_2_DW02_mult_6
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_1_DW01_add_2_DW01_add_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_1_DW01_sub_1_DW01_sub_13
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_1          8000                  saed32rvt_ff1p16v125c
+  mod_add_1_DW01_add_0_DW01_add_1
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_1          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U401/Y (INVX0_RVT)                                      0.02       0.19 f
+  U348/Y (INVX1_RVT)                                      0.01       0.20 r
+  U347/Y (INVX1_RVT)                                      0.01       0.21 f
+  U343/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  butterflies[3].bfly/zeta[11] (bfly_ct_1)                0.00       0.24 f
+  butterflies[3].bfly/mul/b[11] (mod_mul_1)               0.00       0.24 f
+  butterflies[3].bfly/mul/mult_20/B[11] (mod_mul_1_DW02_mult_0_DW02_mult_1)
+                                                          0.00       0.24 f
+  butterflies[3].bfly/mul/mult_20/U3/Y (NBUFFX2_RVT)      0.03       0.27 f
+  butterflies[3].bfly/mul/mult_20/U194/Y (AND2X1_RVT)     0.03       0.29 f
+  butterflies[3].bfly/mul/mult_20/U34/Y (XOR2X1_RVT)      0.04       0.34 r
+  butterflies[3].bfly/mul/mult_20/S2_2_9/CO (FADDX1_RVT)
+                                                          0.04       0.37 r
+  butterflies[3].bfly/mul/mult_20/S2_3_9/CO (FADDX1_RVT)
+                                                          0.04       0.41 r
+  butterflies[3].bfly/mul/mult_20/S2_4_9/CO (FADDX1_RVT)
+                                                          0.04       0.45 r
+  butterflies[3].bfly/mul/mult_20/S2_5_9/S (FADDX1_RVT)
+                                                          0.06       0.51 f
+  butterflies[3].bfly/mul/mult_20/S2_6_8/S (FADDX1_RVT)
+                                                          0.03       0.54 f
+  butterflies[3].bfly/mul/mult_20/S2_7_7/S (FADDX1_RVT)
+                                                          0.05       0.59 r
+  butterflies[3].bfly/mul/mult_20/S2_8_6/S (FADDX1_RVT)
+                                                          0.06       0.65 f
+  butterflies[3].bfly/mul/mult_20/S2_9_5/S (FADDX1_RVT)
+                                                          0.03       0.68 f
+  butterflies[3].bfly/mul/mult_20/S2_10_4/S (FADDX1_RVT)
+                                                          0.05       0.73 r
+  butterflies[3].bfly/mul/mult_20/S4_3/S (FADDX1_RVT)     0.06       0.79 f
+  butterflies[3].bfly/mul/mult_20/U5/Y (XOR2X1_RVT)       0.04       0.83 f
+  butterflies[3].bfly/mul/mult_20/FS_1/A[12] (mod_mul_1_DW01_add_0_DW01_add_9)
+                                                          0.00       0.83 f
+  butterflies[3].bfly/mul/mult_20/FS_1/U56/Y (OR2X1_RVT)
+                                                          0.02       0.85 f
+  butterflies[3].bfly/mul/mult_20/FS_1/U54/Y (NAND2X0_RVT)
+                                                          0.02       0.87 r
+  butterflies[3].bfly/mul/mult_20/FS_1/U7/Y (XOR2X1_RVT)
+                                                          0.10       0.97 f
+  butterflies[3].bfly/mul/mult_20/FS_1/SUM[12] (mod_mul_1_DW01_add_0_DW01_add_9)
+                                                          0.00       0.97 f
+  butterflies[3].bfly/mul/mult_20/PRODUCT[14] (mod_mul_1_DW02_mult_0_DW02_mult_1)
+                                                          0.00       0.97 f
+  butterflies[3].bfly/mul/mult_21/A[14] (mod_mul_1_DW02_mult_2_DW02_mult_6)
+                                                          0.00       0.97 f
+  butterflies[3].bfly/mul/mult_21/S2_14_3/S (FADDX1_RVT)
+                                                          0.06       1.03 r
+  butterflies[3].bfly/mul/mult_21/S2_15_2/CO (FADDX1_RVT)
+                                                          0.04       1.07 r
+  butterflies[3].bfly/mul/mult_21/S2_16_2/CO (FADDX1_RVT)
+                                                          0.04       1.11 r
+  butterflies[3].bfly/mul/mult_21/S2_17_2/CO (FADDX1_RVT)
+                                                          0.04       1.15 r
+  butterflies[3].bfly/mul/mult_21/S2_18_2/CO (FADDX1_RVT)
+                                                          0.04       1.19 r
+  butterflies[3].bfly/mul/mult_21/S2_19_2/CO (FADDX1_RVT)
+                                                          0.04       1.23 r
+  butterflies[3].bfly/mul/mult_21/S2_20_2/CO (FADDX1_RVT)
+                                                          0.04       1.27 r
+  butterflies[3].bfly/mul/mult_21/S2_21_2/CO (FADDX1_RVT)
+                                                          0.04       1.31 r
+  butterflies[3].bfly/mul/mult_21/S2_22_2/CO (FADDX1_RVT)
+                                                          0.04       1.35 r
+  butterflies[3].bfly/mul/mult_21/S4_2/S (FADDX1_RVT)     0.06       1.41 f
+  butterflies[3].bfly/mul/mult_21/U5/Y (XOR2X1_RVT)       0.05       1.45 r
+  butterflies[3].bfly/mul/mult_21/FS_1/A[23] (mod_mul_1_DW01_add_2_DW01_add_14)
+                                                          0.00       1.45 r
+  butterflies[3].bfly/mul/mult_21/FS_1/U61/Y (NAND2X0_RVT)
+                                                          0.04       1.50 f
+  butterflies[3].bfly/mul/mult_21/FS_1/U11/Y (AND2X1_RVT)
+                                                          0.05       1.54 f
+  butterflies[3].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_1_DW01_add_2_DW01_add_14)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/mult_21/PRODUCT[25] (mod_mul_1_DW02_mult_2_DW02_mult_6)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/mult_24/A[1] (mod_mul_1_DW02_mult_1_DW02_mult_5)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/mult_24/PRODUCT[1] (mod_mul_1_DW02_mult_1_DW02_mult_5)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/sub_26/B[1] (mod_mul_1_DW01_sub_1_DW01_sub_13)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/sub_26/U26/Y (INVX1_RVT)        0.01       1.56 r
+  butterflies[3].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.59 r
+  butterflies[3].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.63 r
+  butterflies[3].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.67 r
+  butterflies[3].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.71 r
+  butterflies[3].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.75 r
+  butterflies[3].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.79 r
+  butterflies[3].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.83 r
+  butterflies[3].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.87 r
+  butterflies[3].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.91 r
+  butterflies[3].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.95 r
+  butterflies[3].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       1.99 r
+  butterflies[3].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.03 r
+  butterflies[3].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.07 r
+  butterflies[3].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.11 r
+  butterflies[3].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.15 r
+  butterflies[3].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.19 r
+  butterflies[3].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.23 r
+  butterflies[3].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.27 r
+  butterflies[3].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.31 r
+  butterflies[3].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.35 r
+  butterflies[3].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.39 r
+  butterflies[3].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.43 r
+  butterflies[3].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.47 r
+  butterflies[3].bfly/mul/sub_26/U1/Y (XNOR2X1_RVT)       0.04       2.51 r
+  butterflies[3].bfly/mul/sub_26/DIFF[24] (mod_mul_1_DW01_sub_1_DW01_sub_13)
+                                                          0.00       2.51 r
+  butterflies[3].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.56 r
+  butterflies[3].bfly/mul/U7/Y (NOR4X1_RVT)               0.05       2.61 f
+  butterflies[3].bfly/mul/U3/Y (AND4X1_RVT)               0.06       2.67 f
+  butterflies[3].bfly/mul/U24/Y (OR2X1_RVT)               0.02       2.69 f
+  butterflies[3].bfly/mul/U23/Y (XNOR2X1_RVT)             0.05       2.74 r
+  butterflies[3].bfly/mul/c[1] (mod_mul_1)                0.00       2.74 r
+  butterflies[3].bfly/add/b[1] (mod_add_1)                0.00       2.74 r
+  butterflies[3].bfly/add/add_13/B[1] (mod_add_1_DW01_add_0_DW01_add_1)
+                                                          0.00       2.74 r
+  butterflies[3].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.77 r
+  butterflies[3].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.81 r
+  butterflies[3].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.85 r
+  butterflies[3].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.89 r
+  butterflies[3].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.93 r
+  butterflies[3].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.97 r
+  butterflies[3].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.01 r
+  butterflies[3].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.04 r
+  butterflies[3].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.08 r
+  butterflies[3].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.12 r
+  butterflies[3].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.18 f
+  butterflies[3].bfly/add/add_13/SUM[11] (mod_add_1_DW01_add_0_DW01_add_1)
+                                                          0.00       3.18 f
+  butterflies[3].bfly/add/U30/Y (AND3X1_RVT)              0.03       3.21 f
+  butterflies[3].bfly/add/U6/Y (NOR2X0_RVT)               0.04       3.26 r
+  butterflies[3].bfly/add/U26/Y (OR2X1_RVT)               0.03       3.29 r
+  butterflies[3].bfly/add/U24/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[3].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.34 r
+  butterflies[3].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[3].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.39 r
+  butterflies[3].bfly/add/U16/Y (OR2X1_RVT)               0.03       3.41 r
+  butterflies[3].bfly/add/U14/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[3].bfly/add/U12/Y (OR2X1_RVT)               0.02       3.46 r
+  butterflies[3].bfly/add/U8/CO (FADDX1_RVT)              0.04       3.50 r
+  butterflies[3].bfly/add/U10/Y (OR2X1_RVT)               0.03       3.53 r
+  butterflies[3].bfly/add/U7/CO (FADDX1_RVT)              0.04       3.56 r
+  butterflies[3].bfly/add/U9/Y (XOR3X1_RVT)               0.02       3.59 r
+  butterflies[3].bfly/add/c[11] (mod_add_1)               0.00       3.59 r
+  butterflies[3].bfly/uo[11] (bfly_ct_1)                  0.00       3.59 r
+  U779/Y (AO22X1_RVT)                                     0.04       3.62 r
+  U572/Y (AO221X1_RVT)                                    0.03       3.65 r
+  x_reg[5][11]/D (DFFARX1_RVT)                            0.00       3.65 r
+  data arrival time                                                  3.65
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[5][11]/CLK (DFFARX1_RVT)                          0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.65
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.32
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_data_reg[23]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U8/Y (OR2X1_RVT)                0.03       3.56 r
+  butterflies[1].bfly/add/U16/CO (FADDX1_RVT)             0.04       3.59 r
+  butterflies[1].bfly/add/U3/Y (XOR3X1_RVT)               0.02       3.62 r
+  butterflies[1].bfly/add/c[11] (mod_add_3)               0.00       3.62 r
+  butterflies[1].bfly/uo[11] (bfly_ct_3)                  0.00       3.62 r
+  U335/Y (AO22X1_RVT)                                     0.04       3.65 r
+  out_data_reg[23]/D (DFFARX1_RVT)                        0.00       3.65 r
+  data arrival time                                                  3.65
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  out_data_reg[23]/CLK (DFFARX1_RVT)                      0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.65
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.33
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[2][10]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U8/Y (OR2X1_RVT)                0.03       3.56 r
+  butterflies[1].bfly/add/U16/S (FADDX1_RVT)              0.06       3.61 f
+  butterflies[1].bfly/add/c[10] (mod_add_3)               0.00       3.61 f
+  butterflies[1].bfly/uo[10] (bfly_ct_3)                  0.00       3.61 f
+  U476/Y (AO22X1_RVT)                                     0.02       3.63 f
+  U475/Y (AO221X1_RVT)                                    0.02       3.65 f
+  x_reg[2][10]/D (DFFARX1_RVT)                            0.00       3.65 f
+  data arrival time                                                  3.65
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[2][10]/CLK (DFFARX1_RVT)                          0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.65
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.33
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[6][11]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_1_DW02_mult_0_DW02_mult_1
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_1_DW01_add_0_DW01_add_9
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_1          8000                  saed32rvt_ff1p16v125c
+  mod_mul_1_DW02_mult_2_DW02_mult_6
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_1_DW01_add_2_DW01_add_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_1_DW01_sub_1_DW01_sub_13
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_1          8000                  saed32rvt_ff1p16v125c
+  mod_add_1_DW01_add_0_DW01_add_1
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_1          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U401/Y (INVX0_RVT)                                      0.02       0.19 f
+  U348/Y (INVX1_RVT)                                      0.01       0.20 r
+  U347/Y (INVX1_RVT)                                      0.01       0.21 f
+  U343/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  butterflies[3].bfly/zeta[11] (bfly_ct_1)                0.00       0.24 f
+  butterflies[3].bfly/mul/b[11] (mod_mul_1)               0.00       0.24 f
+  butterflies[3].bfly/mul/mult_20/B[11] (mod_mul_1_DW02_mult_0_DW02_mult_1)
+                                                          0.00       0.24 f
+  butterflies[3].bfly/mul/mult_20/U3/Y (NBUFFX2_RVT)      0.03       0.27 f
+  butterflies[3].bfly/mul/mult_20/U194/Y (AND2X1_RVT)     0.03       0.29 f
+  butterflies[3].bfly/mul/mult_20/U34/Y (XOR2X1_RVT)      0.04       0.34 r
+  butterflies[3].bfly/mul/mult_20/S2_2_9/CO (FADDX1_RVT)
+                                                          0.04       0.37 r
+  butterflies[3].bfly/mul/mult_20/S2_3_9/CO (FADDX1_RVT)
+                                                          0.04       0.41 r
+  butterflies[3].bfly/mul/mult_20/S2_4_9/CO (FADDX1_RVT)
+                                                          0.04       0.45 r
+  butterflies[3].bfly/mul/mult_20/S2_5_9/S (FADDX1_RVT)
+                                                          0.06       0.51 f
+  butterflies[3].bfly/mul/mult_20/S2_6_8/S (FADDX1_RVT)
+                                                          0.03       0.54 f
+  butterflies[3].bfly/mul/mult_20/S2_7_7/S (FADDX1_RVT)
+                                                          0.05       0.59 r
+  butterflies[3].bfly/mul/mult_20/S2_8_6/S (FADDX1_RVT)
+                                                          0.06       0.65 f
+  butterflies[3].bfly/mul/mult_20/S2_9_5/S (FADDX1_RVT)
+                                                          0.03       0.68 f
+  butterflies[3].bfly/mul/mult_20/S2_10_4/S (FADDX1_RVT)
+                                                          0.05       0.73 r
+  butterflies[3].bfly/mul/mult_20/S4_3/S (FADDX1_RVT)     0.06       0.79 f
+  butterflies[3].bfly/mul/mult_20/U5/Y (XOR2X1_RVT)       0.04       0.83 f
+  butterflies[3].bfly/mul/mult_20/FS_1/A[12] (mod_mul_1_DW01_add_0_DW01_add_9)
+                                                          0.00       0.83 f
+  butterflies[3].bfly/mul/mult_20/FS_1/U56/Y (OR2X1_RVT)
+                                                          0.02       0.85 f
+  butterflies[3].bfly/mul/mult_20/FS_1/U54/Y (NAND2X0_RVT)
+                                                          0.02       0.87 r
+  butterflies[3].bfly/mul/mult_20/FS_1/U7/Y (XOR2X1_RVT)
+                                                          0.10       0.97 f
+  butterflies[3].bfly/mul/mult_20/FS_1/SUM[12] (mod_mul_1_DW01_add_0_DW01_add_9)
+                                                          0.00       0.97 f
+  butterflies[3].bfly/mul/mult_20/PRODUCT[14] (mod_mul_1_DW02_mult_0_DW02_mult_1)
+                                                          0.00       0.97 f
+  butterflies[3].bfly/mul/mult_21/A[14] (mod_mul_1_DW02_mult_2_DW02_mult_6)
+                                                          0.00       0.97 f
+  butterflies[3].bfly/mul/mult_21/S2_14_3/S (FADDX1_RVT)
+                                                          0.06       1.03 r
+  butterflies[3].bfly/mul/mult_21/S2_15_2/CO (FADDX1_RVT)
+                                                          0.04       1.07 r
+  butterflies[3].bfly/mul/mult_21/S2_16_2/CO (FADDX1_RVT)
+                                                          0.04       1.11 r
+  butterflies[3].bfly/mul/mult_21/S2_17_2/CO (FADDX1_RVT)
+                                                          0.04       1.15 r
+  butterflies[3].bfly/mul/mult_21/S2_18_2/CO (FADDX1_RVT)
+                                                          0.04       1.19 r
+  butterflies[3].bfly/mul/mult_21/S2_19_2/CO (FADDX1_RVT)
+                                                          0.04       1.23 r
+  butterflies[3].bfly/mul/mult_21/S2_20_2/CO (FADDX1_RVT)
+                                                          0.04       1.27 r
+  butterflies[3].bfly/mul/mult_21/S2_21_2/CO (FADDX1_RVT)
+                                                          0.04       1.31 r
+  butterflies[3].bfly/mul/mult_21/S2_22_2/CO (FADDX1_RVT)
+                                                          0.04       1.35 r
+  butterflies[3].bfly/mul/mult_21/S4_2/S (FADDX1_RVT)     0.06       1.41 f
+  butterflies[3].bfly/mul/mult_21/U5/Y (XOR2X1_RVT)       0.05       1.45 r
+  butterflies[3].bfly/mul/mult_21/FS_1/A[23] (mod_mul_1_DW01_add_2_DW01_add_14)
+                                                          0.00       1.45 r
+  butterflies[3].bfly/mul/mult_21/FS_1/U61/Y (NAND2X0_RVT)
+                                                          0.04       1.50 f
+  butterflies[3].bfly/mul/mult_21/FS_1/U11/Y (AND2X1_RVT)
+                                                          0.05       1.54 f
+  butterflies[3].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_1_DW01_add_2_DW01_add_14)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/mult_21/PRODUCT[25] (mod_mul_1_DW02_mult_2_DW02_mult_6)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/mult_24/A[1] (mod_mul_1_DW02_mult_1_DW02_mult_5)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/mult_24/PRODUCT[1] (mod_mul_1_DW02_mult_1_DW02_mult_5)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/sub_26/B[1] (mod_mul_1_DW01_sub_1_DW01_sub_13)
+                                                          0.00       1.54 f
+  butterflies[3].bfly/mul/sub_26/U26/Y (INVX1_RVT)        0.01       1.56 r
+  butterflies[3].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.59 r
+  butterflies[3].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.63 r
+  butterflies[3].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.67 r
+  butterflies[3].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.71 r
+  butterflies[3].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.75 r
+  butterflies[3].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.79 r
+  butterflies[3].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.83 r
+  butterflies[3].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.87 r
+  butterflies[3].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.91 r
+  butterflies[3].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.95 r
+  butterflies[3].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       1.99 r
+  butterflies[3].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.03 r
+  butterflies[3].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.07 r
+  butterflies[3].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.11 r
+  butterflies[3].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.15 r
+  butterflies[3].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.19 r
+  butterflies[3].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.23 r
+  butterflies[3].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.27 r
+  butterflies[3].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.31 r
+  butterflies[3].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.35 r
+  butterflies[3].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.39 r
+  butterflies[3].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.43 r
+  butterflies[3].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.47 r
+  butterflies[3].bfly/mul/sub_26/U1/Y (XNOR2X1_RVT)       0.04       2.51 r
+  butterflies[3].bfly/mul/sub_26/DIFF[24] (mod_mul_1_DW01_sub_1_DW01_sub_13)
+                                                          0.00       2.51 r
+  butterflies[3].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.56 r
+  butterflies[3].bfly/mul/U7/Y (NOR4X1_RVT)               0.05       2.61 f
+  butterflies[3].bfly/mul/U3/Y (AND4X1_RVT)               0.06       2.67 f
+  butterflies[3].bfly/mul/U24/Y (OR2X1_RVT)               0.02       2.69 f
+  butterflies[3].bfly/mul/U23/Y (XNOR2X1_RVT)             0.05       2.74 r
+  butterflies[3].bfly/mul/c[1] (mod_mul_1)                0.00       2.74 r
+  butterflies[3].bfly/add/b[1] (mod_add_1)                0.00       2.74 r
+  butterflies[3].bfly/add/add_13/B[1] (mod_add_1_DW01_add_0_DW01_add_1)
+                                                          0.00       2.74 r
+  butterflies[3].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.77 r
+  butterflies[3].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.81 r
+  butterflies[3].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.85 r
+  butterflies[3].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.89 r
+  butterflies[3].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.93 r
+  butterflies[3].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.97 r
+  butterflies[3].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.01 r
+  butterflies[3].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.04 r
+  butterflies[3].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.08 r
+  butterflies[3].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.12 r
+  butterflies[3].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.18 f
+  butterflies[3].bfly/add/add_13/SUM[11] (mod_add_1_DW01_add_0_DW01_add_1)
+                                                          0.00       3.18 f
+  butterflies[3].bfly/add/U30/Y (AND3X1_RVT)              0.03       3.21 f
+  butterflies[3].bfly/add/U6/Y (NOR2X0_RVT)               0.04       3.26 r
+  butterflies[3].bfly/add/U26/Y (OR2X1_RVT)               0.03       3.29 r
+  butterflies[3].bfly/add/U24/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[3].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.34 r
+  butterflies[3].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[3].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.39 r
+  butterflies[3].bfly/add/U16/Y (OR2X1_RVT)               0.03       3.41 r
+  butterflies[3].bfly/add/U14/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[3].bfly/add/U12/Y (OR2X1_RVT)               0.02       3.46 r
+  butterflies[3].bfly/add/U8/CO (FADDX1_RVT)              0.04       3.50 r
+  butterflies[3].bfly/add/U10/Y (OR2X1_RVT)               0.03       3.53 r
+  butterflies[3].bfly/add/U7/CO (FADDX1_RVT)              0.04       3.56 r
+  butterflies[3].bfly/add/U9/Y (XOR3X1_RVT)               0.02       3.59 r
+  butterflies[3].bfly/add/c[11] (mod_add_1)               0.00       3.59 r
+  butterflies[3].bfly/uo[11] (bfly_ct_1)                  0.00       3.59 r
+  U765/Y (AO22X1_RVT)                                     0.03       3.61 r
+  U764/Y (AO221X1_RVT)                                    0.03       3.64 r
+  x_reg[6][11]/D (DFFARX1_RVT)                            0.00       3.64 r
+  data arrival time                                                  3.64
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[6][11]/CLK (DFFARX1_RVT)                          0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.64
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.33
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[1][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U17/Y (XNOR2X1_RVT)             0.05       3.58 r
+  butterflies[1].bfly/add/c[9] (mod_add_3)                0.00       3.58 r
+  butterflies[1].bfly/uo[9] (bfly_ct_3)                   0.00       3.58 r
+  U478/Y (AO22X1_RVT)                                     0.03       3.61 r
+  U477/Y (AO221X1_RVT)                                    0.03       3.64 r
+  x_reg[1][9]/D (DFFARX1_RVT)                             0.00       3.64 r
+  data arrival time                                                  3.64
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[1][9]/CLK (DFFARX1_RVT)                           0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.64
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.34
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: out_data_reg[22]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U8/Y (OR2X1_RVT)                0.03       3.56 r
+  butterflies[1].bfly/add/U16/S (FADDX1_RVT)              0.06       3.61 f
+  butterflies[1].bfly/add/c[10] (mod_add_3)               0.00       3.61 f
+  butterflies[1].bfly/uo[10] (bfly_ct_3)                  0.00       3.61 f
+  U470/Y (AO22X1_RVT)                                     0.02       3.64 f
+  out_data_reg[22]/D (DFFARX1_RVT)                        0.00       3.64 f
+  data arrival time                                                  3.64
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  out_data_reg[22]/CLK (DFFARX1_RVT)                      0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.64
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.34
+
+
+  Startpoint: state_reg[1]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: x_reg[2][9]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  ntt_engine         16000                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_0_DW02_mult_4
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3          8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW02_mult_2_DW02_mult_9
+                     8000                  saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_add_2_DW01_add_17
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_mul_3_DW01_sub_1_DW01_sub_14
+                     ForQA                 saed32rvt_ff1p16v125c
+  bfly_ct_3          8000                  saed32rvt_ff1p16v125c
+  mod_add_3_DW01_add_0_DW01_add_5
+                     ForQA                 saed32rvt_ff1p16v125c
+  mod_add_3          ForQA                 saed32rvt_ff1p16v125c
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  state_reg[1]/CLK (DFFARX1_RVT)                          0.00       0.00 r
+  state_reg[1]/Q (DFFARX1_RVT)                            0.09       0.09 f
+  U339/Y (NBUFFX2_RVT)                                    0.03       0.12 f
+  U761/Y (NAND2X0_RVT)                                    0.02       0.14 r
+  U334/Y (INVX1_RVT)                                      0.02       0.16 f
+  U338/Y (INVX1_RVT)                                      0.01       0.17 r
+  U400/Y (INVX1_RVT)                                      0.01       0.18 f
+  U341/Y (INVX1_RVT)                                      0.01       0.19 r
+  U340/Y (INVX1_RVT)                                      0.02       0.21 f
+  U346/Y (NBUFFX2_RVT)                                    0.03       0.24 f
+  U330/Y (AO22X1_RVT)                                     0.05       0.29 f
+  butterflies[1].bfly/v[1] (bfly_ct_3)                    0.00       0.29 f
+  butterflies[1].bfly/mul/a[1] (mod_mul_3)                0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/A[1] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.29 f
+  butterflies[1].bfly/mul/mult_20/U15/Y (AND2X1_RVT)      0.03       0.32 f
+  butterflies[1].bfly/mul/mult_20/U26/Y (XOR2X1_RVT)      0.04       0.35 f
+  butterflies[1].bfly/mul/mult_20/S2_2_9/S (FADDX1_RVT)
+                                                          0.05       0.41 r
+  butterflies[1].bfly/mul/mult_20/S2_3_8/S (FADDX1_RVT)
+                                                          0.03       0.44 r
+  butterflies[1].bfly/mul/mult_20/S2_4_7/S (FADDX1_RVT)
+                                                          0.06       0.50 f
+  butterflies[1].bfly/mul/mult_20/S2_5_6/S (FADDX1_RVT)
+                                                          0.05       0.55 r
+  butterflies[1].bfly/mul/mult_20/S2_6_5/S (FADDX1_RVT)
+                                                          0.03       0.58 r
+  butterflies[1].bfly/mul/mult_20/S2_7_4/S (FADDX1_RVT)
+                                                          0.06       0.64 f
+  butterflies[1].bfly/mul/mult_20/S2_8_3/S (FADDX1_RVT)
+                                                          0.03       0.67 f
+  butterflies[1].bfly/mul/mult_20/S2_9_2/S (FADDX1_RVT)
+                                                          0.05       0.72 r
+  butterflies[1].bfly/mul/mult_20/S2_10_1/S (FADDX1_RVT)
+                                                          0.03       0.75 r
+  butterflies[1].bfly/mul/mult_20/S4_0/S (FADDX1_RVT)     0.11       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/A[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/FS_1/SUM[9] (mod_mul_3_DW01_add_0_DW01_add_12)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_20/PRODUCT[11] (mod_mul_3_DW02_mult_0_DW02_mult_4)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/A[11] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       0.87 f
+  butterflies[1].bfly/mul/mult_21/S2_11_3/S (FADDX1_RVT)
+                                                          0.06       0.93 r
+  butterflies[1].bfly/mul/mult_21/S2_12_2/S (FADDX1_RVT)
+                                                          0.06       0.99 f
+  butterflies[1].bfly/mul/mult_21/S2_13_1/S (FADDX1_RVT)
+                                                          0.06       1.05 r
+  butterflies[1].bfly/mul/mult_21/S1_14_0/CO (FADDX1_RVT)
+                                                          0.04       1.09 r
+  butterflies[1].bfly/mul/mult_21/S1_15_0/CO (FADDX1_RVT)
+                                                          0.04       1.12 r
+  butterflies[1].bfly/mul/mult_21/S1_16_0/CO (FADDX1_RVT)
+                                                          0.04       1.16 r
+  butterflies[1].bfly/mul/mult_21/S1_17_0/CO (FADDX1_RVT)
+                                                          0.04       1.20 r
+  butterflies[1].bfly/mul/mult_21/S1_18_0/CO (FADDX1_RVT)
+                                                          0.04       1.24 r
+  butterflies[1].bfly/mul/mult_21/S1_19_0/CO (FADDX1_RVT)
+                                                          0.04       1.28 r
+  butterflies[1].bfly/mul/mult_21/S1_20_0/CO (FADDX1_RVT)
+                                                          0.04       1.32 r
+  butterflies[1].bfly/mul/mult_21/S1_21_0/CO (FADDX1_RVT)
+                                                          0.04       1.36 r
+  butterflies[1].bfly/mul/mult_21/S1_22_0/CO (FADDX1_RVT)
+                                                          0.04       1.40 r
+  butterflies[1].bfly/mul/mult_21/S4_0/CO (FADDX1_RVT)
+                                                          0.04       1.44 r
+  butterflies[1].bfly/mul/mult_21/S14_24/CO (FADDX1_RVT)
+                                                          0.04       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/B[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.47 r
+  butterflies[1].bfly/mul/mult_21/FS_1/U21/Y (NAND2X0_RVT)
+                                                          0.04       1.52 f
+  butterflies[1].bfly/mul/mult_21/FS_1/U20/Y (AND2X1_RVT)
+                                                          0.05       1.57 f
+  butterflies[1].bfly/mul/mult_21/FS_1/SUM[23] (mod_mul_3_DW01_add_2_DW01_add_17)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_21/PRODUCT[25] (mod_mul_3_DW02_mult_2_DW02_mult_9)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/A[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/mult_24/PRODUCT[1] (mod_mul_3_DW02_mult_1_DW02_mult_8)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/B[1] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       1.57 f
+  butterflies[1].bfly/mul/sub_26/U24/Y (INVX1_RVT)        0.01       1.58 r
+  butterflies[1].bfly/mul/sub_26/U2_1/CO (FADDX1_RVT)     0.04       1.62 r
+  butterflies[1].bfly/mul/sub_26/U2_2/CO (FADDX1_RVT)     0.04       1.66 r
+  butterflies[1].bfly/mul/sub_26/U2_3/CO (FADDX1_RVT)     0.04       1.70 r
+  butterflies[1].bfly/mul/sub_26/U2_4/CO (FADDX1_RVT)     0.04       1.74 r
+  butterflies[1].bfly/mul/sub_26/U2_5/CO (FADDX1_RVT)     0.04       1.78 r
+  butterflies[1].bfly/mul/sub_26/U2_6/CO (FADDX1_RVT)     0.04       1.81 r
+  butterflies[1].bfly/mul/sub_26/U2_7/CO (FADDX1_RVT)     0.04       1.85 r
+  butterflies[1].bfly/mul/sub_26/U2_8/CO (FADDX1_RVT)     0.04       1.89 r
+  butterflies[1].bfly/mul/sub_26/U2_9/CO (FADDX1_RVT)     0.04       1.93 r
+  butterflies[1].bfly/mul/sub_26/U2_10/CO (FADDX1_RVT)
+                                                          0.04       1.97 r
+  butterflies[1].bfly/mul/sub_26/U2_11/CO (FADDX1_RVT)
+                                                          0.04       2.01 r
+  butterflies[1].bfly/mul/sub_26/U2_12/CO (FADDX1_RVT)
+                                                          0.04       2.05 r
+  butterflies[1].bfly/mul/sub_26/U2_13/CO (FADDX1_RVT)
+                                                          0.04       2.09 r
+  butterflies[1].bfly/mul/sub_26/U2_14/CO (FADDX1_RVT)
+                                                          0.04       2.13 r
+  butterflies[1].bfly/mul/sub_26/U2_15/CO (FADDX1_RVT)
+                                                          0.04       2.17 r
+  butterflies[1].bfly/mul/sub_26/U2_16/CO (FADDX1_RVT)
+                                                          0.04       2.21 r
+  butterflies[1].bfly/mul/sub_26/U2_17/CO (FADDX1_RVT)
+                                                          0.04       2.25 r
+  butterflies[1].bfly/mul/sub_26/U2_18/CO (FADDX1_RVT)
+                                                          0.04       2.29 r
+  butterflies[1].bfly/mul/sub_26/U2_19/CO (FADDX1_RVT)
+                                                          0.04       2.33 r
+  butterflies[1].bfly/mul/sub_26/U2_20/CO (FADDX1_RVT)
+                                                          0.04       2.37 r
+  butterflies[1].bfly/mul/sub_26/U2_21/CO (FADDX1_RVT)
+                                                          0.04       2.41 r
+  butterflies[1].bfly/mul/sub_26/U2_22/CO (FADDX1_RVT)
+                                                          0.04       2.45 r
+  butterflies[1].bfly/mul/sub_26/U2_23/CO (FADDX1_RVT)
+                                                          0.04       2.49 r
+  butterflies[1].bfly/mul/sub_26/U5/Y (XNOR2X1_RVT)       0.04       2.53 r
+  butterflies[1].bfly/mul/sub_26/DIFF[24] (mod_mul_3_DW01_sub_1_DW01_sub_14)
+                                                          0.00       2.53 r
+  butterflies[1].bfly/mul/U33/Y (OR4X1_RVT)               0.05       2.58 r
+  butterflies[1].bfly/mul/U9/Y (NOR4X1_RVT)               0.05       2.63 f
+  butterflies[1].bfly/mul/U4/Y (AND4X1_RVT)               0.06       2.69 f
+  butterflies[1].bfly/mul/U6/Y (OR2X1_RVT)                0.02       2.71 f
+  butterflies[1].bfly/mul/U25/Y (XNOR2X1_RVT)             0.05       2.76 r
+  butterflies[1].bfly/mul/c[1] (mod_mul_3)                0.00       2.76 r
+  butterflies[1].bfly/add/b[1] (mod_add_3)                0.00       2.76 r
+  butterflies[1].bfly/add/add_13/B[1] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       2.76 r
+  butterflies[1].bfly/add/add_13/U1_1/CO (FADDX1_RVT)     0.04       2.80 r
+  butterflies[1].bfly/add/add_13/U1_2/CO (FADDX1_RVT)     0.04       2.83 r
+  butterflies[1].bfly/add/add_13/U1_3/CO (FADDX1_RVT)     0.04       2.87 r
+  butterflies[1].bfly/add/add_13/U1_4/CO (FADDX1_RVT)     0.04       2.91 r
+  butterflies[1].bfly/add/add_13/U1_5/CO (FADDX1_RVT)     0.04       2.95 r
+  butterflies[1].bfly/add/add_13/U1_6/CO (FADDX1_RVT)     0.04       2.99 r
+  butterflies[1].bfly/add/add_13/U1_7/CO (FADDX1_RVT)     0.04       3.02 r
+  butterflies[1].bfly/add/add_13/U1_8/CO (FADDX1_RVT)     0.04       3.06 r
+  butterflies[1].bfly/add/add_13/U1_9/CO (FADDX1_RVT)     0.04       3.10 r
+  butterflies[1].bfly/add/add_13/U1_10/CO (FADDX1_RVT)
+                                                          0.04       3.14 r
+  butterflies[1].bfly/add/add_13/U1_11/S (FADDX1_RVT)     0.06       3.20 f
+  butterflies[1].bfly/add/add_13/SUM[11] (mod_add_3_DW01_add_0_DW01_add_5)
+                                                          0.00       3.20 f
+  butterflies[1].bfly/add/U36/Y (AND3X1_RVT)              0.03       3.23 f
+  butterflies[1].bfly/add/U4/Y (NOR2X1_RVT)               0.05       3.28 r
+  butterflies[1].bfly/add/U30/Y (OR2X1_RVT)               0.03       3.31 r
+  butterflies[1].bfly/add/U7/Y (OR2X1_RVT)                0.03       3.33 r
+  butterflies[1].bfly/add/U27/Y (OR2X1_RVT)               0.03       3.36 r
+  butterflies[1].bfly/add/U25/Y (OR2X1_RVT)               0.03       3.38 r
+  butterflies[1].bfly/add/U9/Y (INVX1_RVT)                0.01       3.39 f
+  butterflies[1].bfly/add/U6/Y (NAND2X0_RVT)              0.02       3.41 r
+  butterflies[1].bfly/add/U22/Y (OR2X1_RVT)               0.03       3.44 r
+  butterflies[1].bfly/add/U20/Y (OR2X1_RVT)               0.03       3.47 r
+  butterflies[1].bfly/add/U18/Y (OR2X1_RVT)               0.03       3.49 r
+  butterflies[1].bfly/add/U11/Y (NAND2X0_RVT)             0.02       3.51 f
+  butterflies[1].bfly/add/U15/Y (NAND3X0_RVT)             0.02       3.53 r
+  butterflies[1].bfly/add/U17/Y (XNOR2X1_RVT)             0.05       3.58 r
+  butterflies[1].bfly/add/c[9] (mod_add_3)                0.00       3.58 r
+  butterflies[1].bfly/uo[9] (bfly_ct_3)                   0.00       3.58 r
+  U482/Y (AO22X1_RVT)                                     0.02       3.60 r
+  U481/Y (AO221X1_RVT)                                    0.03       3.63 r
+  x_reg[2][9]/D (DFFARX1_RVT)                             0.00       3.63 r
+  data arrival time                                                  3.63
+
+  clock clk (rise edge)                                   5.00       5.00
+  clock network delay (ideal)                             0.00       5.00
+  x_reg[2][9]/CLK (DFFARX1_RVT)                           0.00       5.00 r
+  library setup time                                     -0.02       4.98
+  data required time                                                 4.98
+  --------------------------------------------------------------------------
+  data required time                                                 4.98
+  data arrival time                                                 -3.63
+  --------------------------------------------------------------------------
+  slack (MET)                                                        1.35
+
+
+1

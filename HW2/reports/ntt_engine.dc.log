@@ -1,0 +1,390 @@
+
+                           Design Compiler Graphical 
+                                 DC Ultra (TM)
+                                  DFTMAX (TM)
+                              Power Compiler (TM)
+                                 DesignWare (R)
+                                 DC Expert (TM)
+                               Design Vision (TM)
+                               HDL Compiler (TM)
+                               VHDL Compiler (TM)
+                                  DFT Compiler
+                               Design Compiler(R)
+
+              Version Q-2019.12-SP5-5 for linux64 - Mar 21, 2021 
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+Initializing...
+# HW2: run from the bundle's work directory with dc_shell -f ../scripts/ntt_syn.tcl.
+# Required conditions: SAED 32nm, 200 MHz (5 ns), plain compile only.
+# Library name and server locations follow Design Compiler(1028) lecture pages 18/20.
+if {[catch {
+    set DESIGN_NAME ntt_engine
+    set DESIGN_REF_DATA_PATH [file normalize [file join [file dirname [info script]] ..]]
+    set RTL_DIR [file join $DESIGN_REF_DATA_PATH rtl]
+    set REPORTS_DIR [file join $DESIGN_REF_DATA_PATH reports]
+    set RESULTS_DIR [file join $DESIGN_REF_DATA_PATH outputs]
+    set WORK_DIR [file join $DESIGN_REF_DATA_PATH work]
+    file mkdir $REPORTS_DIR $RESULTS_DIR $WORK_DIR
+
+    set DB_NAME saed32rvt_ff1p16v125c.db
+    if {[info exists env(SAED32_DB)] && $env(SAED32_DB) ne ""} {
+        set LIB_DB [file normalize $env(SAED32_DB)]
+    } else {
+        set candidates [list             [file join $env(HOME) lib SAED32_EDK $DB_NAME]             /data3/Class/SID/2026_2/2026_2_sid00/update/$DB_NAME]
+        set LIB_DB ""
+        foreach candidate $candidates {
+            if {[file readable $candidate]} {
+                set LIB_DB [file normalize $candidate]
+                break
+            }
+        }
+    }
+    if {$LIB_DB eq "" || ![file readable $LIB_DB]} {
+        error "SAED32 .db not readable. Set SAED32_DB to the course library file."
+    }
+    if {[file tail $LIB_DB] ne $DB_NAME} {
+        error "Expected the course library $DB_NAME; received $LIB_DB"
+    }
+    set target_library [list $LIB_DB]
+    set link_library [concat [list *] $target_library]
+    set search_path [concat [list $RTL_DIR [file dirname $LIB_DB]] $search_path]
+    define_design_lib WORK -path [file join $WORK_DIR designlib]
+
+    set RTL_FILES {mod_add.v mod_sub.v mod_mul.v bfly_ct.v ntt_engine.v}
+    foreach name $RTL_FILES {
+        set source_file [file join $RTL_DIR $name]
+        if {![file readable $source_file]} {error "Missing RTL: $source_file"}
+        if {![analyze -format verilog $source_file]} {error "Analyze failed: $name"}
+    }
+    elaborate $DESIGN_NAME
+    current_design $DESIGN_NAME
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.link.rpt] {
+        set linked [link]
+    }
+    if {!$linked} {error "Unresolved design references: see the link report."}
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.check_design.pre.rpt] {
+        set design_ok [check_design]
+    }
+    if {!$design_ok} {error "check_design failed before compile."}
+
+    # The PDF example's CK/10 ns values do not apply to this HW2 interface.
+    if {[sizeof_collection [get_ports clk]] != 1} {error "Expected one clk port."}
+    create_clock -name clk -period 5.0 -waveform {0 2.5} [get_ports clk]
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.units.rpt] {report_units}
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.clock.rpt] {report_clock}
+
+    # No compile_ultra, incremental compile, retiming, or optimization flags.
+    compile
+
+    write -format verilog -hierarchy -output [file join $RESULTS_DIR ${DESIGN_NAME}_mapped.v]
+    write_sdc [file join $RESULTS_DIR ${DESIGN_NAME}.sdc]
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.mapped.area.rpt] {report_area}
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.mapped.timing.rpt] {report_timing}
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.timing_paths.rpt] {
+        report_timing -delay_type max -max_paths 10 -path_type full
+    }
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.constraints.rpt] {
+        report_constraint -all_violators
+    }
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.check_timing.rpt] {check_timing}
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.qor.rpt] {report_qor}
+    redirect -file [file join $REPORTS_DIR ${DESIGN_NAME}.check_design.post.rpt] {
+        set design_ok [check_design]
+    }
+
+    set latch_count [sizeof_collection [all_registers -level_sensitive]]
+    set status_file [open [file join $REPORTS_DIR ${DESIGN_NAME}.synthesis_status.txt] w]
+    puts $status_file "Design: $DESIGN_NAME"
+    puts $status_file "Library: $LIB_DB"
+    puts $status_file "Clock port: clk; requested period: 5.0 ns (check units report)"
+    puts $status_file "Synthesis command: compile (no options)"
+    puts $status_file "Latch count: $latch_count"
+    puts $status_file "Post-compile check_design: $design_ok"
+    puts $status_file "Timing satisfaction must be evaluated from the timing/constraint reports."
+    puts $status_file "Only the assignment's clock constraint is applied; no I/O budgets are assumed."
+    close $status_file
+    if {!$design_ok} {error "check_design failed after compile."}
+    if {$latch_count != 0} {error "Latch inference is forbidden by the assignment."}
+    puts "HW2 synthesis completed. Review area, timing, constraints, and tool warnings."
+} message]} {
+    puts stderr "ERROR: HW2 synthesis stopped: $message"
+    exit 1
+}
+Running PRESTO HDLC
+Compiling source file /data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/mod_add.v
+Presto compilation completed successfully.
+Loading db file '/data3/Class/SID/2026_2/2026_2_sid83/lib/SAED32_EDK/saed32rvt_ff1p16v125c.db'
+Information: Using CCS timing libraries. (TIM-024)
+Running PRESTO HDLC
+Compiling source file /data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/mod_sub.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling source file /data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/mod_mul.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling source file /data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/bfly_ct.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+Compiling source file /data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/ntt_engine.v
+Presto compilation completed successfully.
+Loading db file '/data1/synopsys/testmax/dft/syn/Q-2019.12-SP5-5/libraries/syn/gtech.db'
+Loading db file '/data1/synopsys/testmax/dft/syn/Q-2019.12-SP5-5/libraries/syn/standard.sldb'
+  Loading link library 'saed32rvt_ff1p16v125c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  /data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/ntt_engine.v:71: DEFAULT branch of CASE statement cannot be reached. (ELAB-311)
+
+Statistics for case statements in always block at line 38 in file
+	'/data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/ntt_engine.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            44            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 61 in file
+	'/data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/ntt_engine.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            71            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+	in routine ntt_engine line 61 in file
+		'/data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/rtl/ntt_engine.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      busy_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    out_data_reg     | Flip-flop |  96   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|        x_reg        | Flip-flop |  96   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (ntt_engine)
+Elaborated 1 design.
+Current design is now 'ntt_engine'.
+Information: Building the design 'bfly_ct'. (HDL-193)
+Presto compilation completed successfully. (bfly_ct)
+Information: Building the design 'mod_mul'. (HDL-193)
+Presto compilation completed successfully. (mod_mul)
+Information: Building the design 'mod_add'. (HDL-193)
+Presto compilation completed successfully. (mod_add)
+Information: Building the design 'mod_sub'. (HDL-193)
+Presto compilation completed successfully. (mod_sub)
+Current design is 'ntt_engine'.
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.5 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 60 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'mod_sub_0'
+  Processing 'mod_add_0'
+  Processing 'mod_mul_0'
+  Processing 'bfly_ct_0'
+  Processing 'ntt_engine'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'mod_sub_1_DW01_add_0'
+  Processing 'mod_sub_1_DW01_sub_0'
+  Processing 'mod_add_1_DW01_sub_0_DW01_sub_1'
+  Processing 'mod_add_1_DW01_cmp2_0'
+  Processing 'mod_add_1_DW01_add_0_DW01_add_1'
+  Processing 'mod_mul_1_DW01_sub_0_DW01_sub_2'
+  Processing 'mod_mul_1_DW01_cmp2_0_DW01_cmp2_1'
+  Processing 'mod_sub_2_DW01_add_0_DW01_add_2'
+  Processing 'mod_sub_2_DW01_sub_0_DW01_sub_3'
+  Processing 'mod_add_2_DW01_sub_0_DW01_sub_4'
+  Processing 'mod_add_2_DW01_cmp2_0_DW01_cmp2_2'
+  Processing 'mod_add_2_DW01_add_0_DW01_add_3'
+  Processing 'mod_mul_2_DW01_sub_0_DW01_sub_5'
+  Processing 'mod_mul_2_DW01_cmp2_0_DW01_cmp2_3'
+  Processing 'mod_sub_3_DW01_add_0_DW01_add_4'
+  Processing 'mod_sub_3_DW01_sub_0_DW01_sub_6'
+  Processing 'mod_add_3_DW01_sub_0_DW01_sub_7'
+  Processing 'mod_add_3_DW01_cmp2_0_DW01_cmp2_4'
+  Processing 'mod_add_3_DW01_add_0_DW01_add_5'
+  Processing 'mod_mul_3_DW01_sub_0_DW01_sub_8'
+  Processing 'mod_mul_3_DW01_cmp2_0_DW01_cmp2_5'
+  Processing 'mod_sub_0_DW01_add_0_DW01_add_6'
+  Processing 'mod_sub_0_DW01_sub_0_DW01_sub_9'
+  Processing 'mod_add_0_DW01_sub_0_DW01_sub_10'
+  Processing 'mod_add_0_DW01_cmp2_0_DW01_cmp2_6'
+  Processing 'mod_add_0_DW01_add_0_DW01_add_7'
+  Processing 'mod_mul_0_DW01_sub_0_DW01_sub_11'
+  Processing 'mod_mul_0_DW01_cmp2_0_DW01_cmp2_7'
+  Allocating blocks in 'DW02_mult_A_width12_B_width12'
+  Building model 'DW01_MUX'
+  Processing 'DW01_MUX'
+  Building model 'DW01_mmux_width2'
+  Processing 'DW01_mmux_width2'
+  Building model 'DW01_mmux_width3'
+  Processing 'DW01_mmux_width3'
+  Building model 'DW01_mmux_width4'
+  Processing 'DW01_mmux_width4'
+  Building model 'DW01_mmux_width5'
+  Processing 'DW01_mmux_width5'
+  Building model 'DW01_NAND2'
+  Processing 'DW01_NAND2'
+  Building model 'DW01_add_width22' (cla)
+  Processing 'DW01_add_width22'
+  Building model 'DW02_mult_A_width12_B_width12' (csa)
+  Processing 'DW02_mult_A_width12_B_width12'
+  Building model 'DW01_sub_width25' (rpl)
+  Processing 'DW01_sub_width25'
+  Building model 'DW01_sub_width25' (cla)
+  Processing 'DW01_sub_width25'
+  Allocating blocks in 'DW02_mult_A_width24_B_width13'
+  Building model 'DW01_add_width35' (cla)
+  Processing 'DW01_add_width35'
+  Building model 'DW02_mult_A_width24_B_width13' (csa)
+  Processing 'DW02_mult_A_width24_B_width13'
+  Allocating blocks in 'DW02_mult_A_width13_B_width12'
+  Building model 'DW01_add_width23' (cla)
+  Processing 'DW01_add_width23'
+  Building model 'DW02_mult_A_width13_B_width12' (csa)
+  Processing 'DW02_mult_A_width13_B_width12'
+  Allocating blocks in 'DW02_mult_A_width13_B_width24'
+  Building model 'DW02_mult_A_width13_B_width24' (csa)
+  Processing 'DW02_mult_A_width13_B_width24'
+  Allocating blocks in 'DW02_mult_A_width12_B_width13'
+  Building model 'DW02_mult_A_width12_B_width13' (csa)
+  Processing 'DW02_mult_A_width12_B_width13'
+  Processing 'mod_mul_2_DW02_mult_0'
+  Processing 'mod_mul_2_DW01_add_0_DW01_add_8'
+  Processing 'mod_mul_1_DW02_mult_0_DW02_mult_1'
+  Processing 'mod_mul_1_DW01_add_0_DW01_add_9'
+  Processing 'mod_mul_2_DW01_sub_1_DW01_sub_12'
+  Processing 'mod_mul_2_DW02_mult_1_DW02_mult_2'
+  Processing 'mod_mul_2_DW01_add_1_DW01_add_10'
+  Processing 'mod_mul_2_DW02_mult_2_DW02_mult_3'
+  Processing 'mod_mul_2_DW01_add_2_DW01_add_11'
+  Processing 'mod_mul_3_DW02_mult_0_DW02_mult_4'
+  Processing 'mod_mul_3_DW01_add_0_DW01_add_12'
+  Processing 'mod_mul_1_DW01_sub_1_DW01_sub_13'
+  Processing 'mod_mul_1_DW02_mult_1_DW02_mult_5'
+  Processing 'mod_mul_1_DW01_add_1_DW01_add_13'
+  Processing 'mod_mul_1_DW02_mult_2_DW02_mult_6'
+  Processing 'mod_mul_1_DW01_add_2_DW01_add_14'
+  Processing 'mod_mul_0_DW02_mult_0_DW02_mult_7'
+  Processing 'mod_mul_0_DW01_add_0_DW01_add_15'
+  Processing 'mod_mul_3_DW01_sub_1_DW01_sub_14'
+  Processing 'mod_mul_3_DW02_mult_1_DW02_mult_8'
+  Processing 'mod_mul_3_DW01_add_1_DW01_add_16'
+  Processing 'mod_mul_3_DW02_mult_2_DW02_mult_9'
+  Processing 'mod_mul_3_DW01_add_2_DW01_add_17'
+  Processing 'mod_mul_0_DW01_sub_1_DW01_sub_15'
+  Processing 'mod_mul_0_DW02_mult_1_DW02_mult_10'
+  Processing 'mod_mul_0_DW01_add_1_DW01_add_18'
+  Processing 'mod_mul_0_DW02_mult_2_DW02_mult_11'
+  Processing 'mod_mul_0_DW01_add_2_DW01_add_19'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:17   17630.5      4.64      79.2      26.9                          
+    0:01:17   17620.1      4.62      78.9      26.8                          
+    0:01:17   17620.1      4.62      78.9      26.8                          
+    0:01:18   17619.0      4.60      78.9      26.8                          
+    0:01:18   17619.0      4.60     135.4      26.8                          
+    0:01:25   14792.5 301951968.00 4243694592.0 805161775.5                          
+    0:01:27   14733.2 216663888.00 1411618688.0 761585852.5                          
+    0:01:28   14746.2 6893717504.00 205761839104.0 22841014632.7                          
+    0:01:28   14768.8      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+    0:01:29   14743.9      0.00     896.6       0.0                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:29   14743.9      0.00       0.0       0.0                          
+    0:01:29   14743.9      0.00       0.0       0.0                          
+    0:01:29   14743.9      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:01:29   14743.9      0.00       0.0       0.0                          
+    0:01:29   14743.9      0.00       0.0       0.0                          
+    0:01:30   14571.1      0.00       0.0       0.0                          
+    0:01:31   14467.4      0.00       0.0       0.0                          
+    0:01:31   14431.3      0.00       0.0       0.0                          
+    0:01:31   14421.4      0.00       0.0       0.0                          
+    0:01:32   14418.1      0.00       0.0       0.0                          
+    0:01:32   14418.1      0.00       0.0       0.0                          
+    0:01:32   14418.1      0.00       0.0       0.0                          
+    0:01:32   14402.3      0.00       0.0       0.0                          
+    0:01:32   14402.3      0.00       0.0       0.0                          
+    0:01:32   14402.3      0.00       0.0       0.0                          
+    0:01:32   14402.3      0.00       0.0       0.0                          
+    0:01:32   14402.3      0.00       0.0       0.0                          
+    0:01:32   14402.3      0.00       0.0       0.0                          
+    0:01:33   14402.3      0.00       0.0       0.0                          
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/data3/Class/SID/2026_2/2026_2_sid83/ntt_hw2_dc/outputs/ntt_engine_mapped.v'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Warning: Verilog writer has added 22 nets to module mod_mul_0_DW02_mult_2_DW02_mult_11 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 24 nets to module mod_mul_0 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module mod_mul_3_DW02_mult_2_DW02_mult_9 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 24 nets to module mod_mul_3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module mod_mul_2_DW02_mult_2_DW02_mult_3 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 24 nets to module mod_mul_2 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 22 nets to module mod_mul_1_DW02_mult_2_DW02_mult_6 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+Warning: Verilog writer has added 24 nets to module mod_mul_1 using SYNOPSYS_UNCONNECTED_ as prefix.  Please use the change_names command to make the correct changes before invoking the verilog writer.  (VO-11)
+HW2 synthesis completed. Review area, timing, constraints, and tool warnings.
+exit 0
+
+Memory usage for this session 227 Mbytes.
+Memory usage for this session including child processes 227 Mbytes.
+CPU usage for this session 121 seconds ( 0.03 hours ).
+Elapsed time for this session 124 seconds ( 0.03 hours ).
+
+Thank you...
